@@ -4,17 +4,13 @@ ul#flex-container{
     padding: 0px;
     display: flex;
     align-items: baseline;
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex: 25%;
-    max-width: 25%;
 }
 
-ul li {
+img {
+    height: 380px;
     padding-top: 10px;
     color: white;
     font-weight: bold;
-    font-size: 1em;
     flex-grow: 1;
     text-align: center;
 }
