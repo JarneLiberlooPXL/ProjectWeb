@@ -3,25 +3,118 @@ ul#flex-container{
     margin: 0px;
     padding: 0px;
     display: flex;
-    align-items: baseline;
 }
 
-img {
-    height: 380px;
-    padding-top: 10px;
-    color: white;
-    font-weight: bold;
+li{
     flex-grow: 1;
-    text-align: center;
 }
 
-.button{
+html, body, figure, div, ul{
+    height: 100%;
+    width: 100%;
+}
+
+ul li:first-child {
+    background-image: url("Foto/Vlaggen.jpg");
+    background-size: 400%;
+    background-repeat: no-repeat;
+
+}
+ul li:nth-child(2){
+    background-image: url("Foto/Stadion.jpg");
+    background-size: 400%;
+    background-repeat: no-repeat;
+}
+ul li:nth-child(3){
+    background-image: url("Foto/opstelling.jpg");
+    background-size: 300%;
+    background-repeat: no-repeat;
+}
+ul li:nth-child(4){
+    background-image: url("Foto/trofee.jpg");
+    background-size: 130%;
+    background-repeat: no-repeat;
+}
+
+button#home{
     align-content: center;
+    align-self: center;
     align-items: center;
     vertical-align: center;
+    horiz-align: center;
+    margin-left: 42.5%;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     background-color: white;
     width: 250px;
     height: 70px;
+    border-style: none;
+    position: absolute;
 }
+
+.btn-group .button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding: 13px 32px 200px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    font-style: inherit;
+    cursor: pointer;
+    float: left;
+    font-weight: bold;
+
+
+}
+.btn-group .button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease-out;
+}
+
+.TimerTitle{
+    font-size: 15px;
+    text-align: center;
+    width: 250px;
+    height: 20px;
+    margin-bottom: 0px;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    position: absolute;
+    margin-left: 42.5%;
+
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    vertical-align: bottom;
+    horiz-align: center;
+    bottom: 40px;
+}
+.Timer{
+    font-size: 30px;
+    text-align: center;
+    width: 250px;
+    height: 40px;
+    margin: 0px auto auto;
+    background-color: black;
+    color: white;
+    position: absolute;
+    margin-left: 42.5%;
+
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    vertical-align: bottom;
+    horiz-align: center;
+    bottom: 0px;
+
+}
+
