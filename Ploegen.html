@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ploegen</title>
+    <link rel="stylesheet" href="cssPloegen.css">
+</head>
+
+<body>
+
+<div style="height: 75px;">
+    <button value="" id="home" class="button" style="float: right; margin-right: 400px; "onclick="window.location.href='HomePage.html'">
+    <img src="Fotos/762fbd2c-6988-4cfc-83d4-7a7da0c3fd83-1020x771.jpeg" height="50" width="50"/>
+    <img src="Fotos/Fifa_World_Cup_Russia_2018_logo.png" height="50" width="150"/>
+    </button>
+</div>
+<div style="height: 175px; width: 500px; border: black; border-style: solid; vertical-align: center;">
+    <h3>
+        Naam: <input id="naam" type="text" placeholder="Team name"> </p>
+        Shortcode: <input id="shortcode" type="text" placeholder="Team shortcode"> </p>
+        Beschrijving: <input id="beschrijving" type="text"; placeholder="Team description " > </p>
+    </h3>
+    <button id="toevoegen" onclick="Toevoegen()">Toevoegen</button>
+</div>
+<div style="height: 25px"></div>
+<div id="landen"></div>
+
+
+<script>
+    let landenArray = JSON.parse(localStorage.getItem('landen'));
+    console.log(landenArray);
+    updateLanden();
+    function Toevoegen() {
+
+        let naam = document.getElementById("naam").value;
+        let shortcode = document.getElementById("shortcode").value;
+        let beschrijving = document.getElementById("beschrijving").value;
+
+        let land = {name: naam, code: shortcode, desc: beschrijving};
+        landenArray.push(land);
+
+        document.getElementById("landen").innerHTML = "";
+
+        updateLanden();
+    }
+
+    function updateLanden() {
+        if(!localStorage)
+            return;
+
+        for(let i=0;i<landenArray.length;i++) {
+            let land = landenArray[i];
+
+            var para = document.createElement("div");
+            var image = document.createElement("img");
+            image.setAttribute("src", "landen/" + land.code + ".png");
+            image.classList.add("vlag")
+            var label = document.createElement("label");
+            label.innerHTML = land.name;
+            label.classList.add("naamLand");
+            var label2 = document.createElement("label");
+            label2.innerHTML = land.desc;
+            label2.classList.add("beschrijvingLand");
+
+            para.appendChild(image);
+            para.appendChild(label);
+            para.appendChild(label2);
+
+            para.classList.add("blok");
+
+            document.getElementById("landen").appendChild(para);
+
+            localStorage.setItem('landen', JSON.stringify(landenArray))
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

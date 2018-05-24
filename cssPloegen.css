@@ -1,0 +1,53 @@
+ul#flex-container{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: baseline;
+}
+.blok{
+    height: 200px;
+    width: 400px;
+    border-style: solid;
+    border-color: grey;
+    padding-bottom: 25px;
+    position: relative;
+    margin: 25px;
+
+}
+.vlag{
+    padding-top: 10px;
+    padding-left: 10px;
+    height: 100px;
+    width: 200px;
+
+}
+
+.naamLand{
+    font-size: 25px;
+    position: absolute;
+    top:55px;
+
+
+}
+.beschrijvingLand{
+    position:absolute;
+    top:120px;
+    left:10px;
+}
+
+.button{
+    align-content: center;
+    align-items: center;
+    vertical-align: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: white;
+    width: 250px;
+    height: 70px;
+    border-style: none;
+}
+html, body, figure, div, ul{
+    height: 100%;
+    width: 100%;
+}
