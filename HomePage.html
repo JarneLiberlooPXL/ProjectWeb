@@ -4,18 +4,46 @@
     <link rel="stylesheet" href="CssHompage.css">
     <meta charset="UTF-8">
     <title>WK2018</title>
-    <!--<button value="" id="home" class="button">
-        <img src="762fbd2c-6988-4cfc-83d4-7a7da0c3fd83-1020x771.jpeg" height="50" width="50"/>
-        <img src="Fifa_World_Cup_Russia_2018_logo.png" height="50" width="150"/>
-    </button> -->
-    <div id="container">
+    <button value="" id="home">
+        <img src="Foto/762fbd2c-6988-4cfc-83d4-7a7da0c3fd83-1020x771.jpeg" height="50" width="50"/>
+        <img src="Foto/Fifa_World_Cup_Russia_2018_logo.png" height="50" width="150"/>
+    </button>
+
+    <div class="btn-group" id="container">
+        <p class="TimerTitle">Opening</p>
+        <p id="Clock" class="Timer"></p>
+        <script>
+            //Set the date
+            var countDownDate = new Date(2018, 05, 6, 20,45,00).getTime();
+            //Update time every second
+            var countDown = setInterval(function () {
+                //Get today's date
+                var now = new Date().getTime();
+                //Find date difference
+                var difference = countDownDate - now;
+                //Time calculations
+                var days = Math.floor(difference/ (1000 *60 * 60 * 24));
+                var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                //Display the timer
+                document.getElementById("Clock").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds +"s ";
+                //Count down finished
+                if(difference < 0 ){
+                    clearInterval(countDown);
+                    document.getElementById("Clock").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
         <ul id="flex-container">
-            <li><img src="Foto/Vlaggen.jpg"/></li>
-            <li><img src="Foto/Stadion.jpg"/></li>
-            <li><img src="Foto/opstelling.jpg"/></li>
-            <li><img src="Foto/trofee.jpg"/></li>
+            <li><button class="button">Ploegen</button></li>
+            <li><button class="button">Stadions</button></li>
+            <li><button class="button">Opstelling</button></li>
+            <li><button class="button">Simulatie</button></li>
         </ul>
+
     </div>
+
 
 
 </head>

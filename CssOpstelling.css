@@ -1,0 +1,28 @@
+ul#flex-container{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    width: 100%;
+}
+
+li{
+    flex-grow: 1;
+    display:inline-block;
+    vertical-align: top;
+    width: 45%;
+    border-style: inherit;
+}
+
+html, body, figure, ul{
+    height: 100%;
+    width: 100%;
+}
+
+.ploegenlijst {
+    height: 90%;
+    width: 26%;
+    padding: 10px;
+    overflow:scroll;
+    position: fixed;
+}
