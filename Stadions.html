@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stadions</title>
+    <style>
+        #map{
+            width: 100%;
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+<H3>Google map</H3>
+<div id="map"></div>
+<script>
+    var map;
+    function initMap(){
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: new google.maps.LatLng(55,37),
+            mapTypeId: 'hybrid'
+        });
+        /*var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+        var icons = {
+            info: {
+                icon: iconBase + 'info.png'
+            }
+        };*/
+
+        var icons = {
+            info: {
+                icon: 'Foto/icon_stadion.png',
+                /*size: new google.maps.Size[10, 10],
+                scaledSize: new google.maps.Size[25, 25]*/
+            },
+
+        };
+
+        //var icons = { stadion: {icon: 'Project/Foto/icon_stadion.png'}};
+                   // scaledSize: new google.maps.Size(22,32),
+                   // origin: new google.maps.Point(0,0),
+                   // anchor: new google.maps.Point(0, 0)};
+        var stadions = [
+            {name: "Luzhniki", city: "Moskou", cap: 81006, img: "Foto/icon_stadion.png"},
+            {name: "Zenit Arena", city: "Sint-Petersburg", cap: 68134, img: "Foto/icon_stadion.png"},
+            {name: "Fisht Olympic Stadium", city: "Sochi", cap: 47659, img: "Foto/icon_stadion.png"},
+            {name: "Volgograd Arena", city: "Volgograd", cap: 45568, img: "Foto/icon_stadion.png"},
+            {name: "Stadion Nizhny Novgorod", city: "Nizhny Novgorod", cap: 45331, img: "Foto/icon_stadion.png"},
+            {name: "Rostov Arena", city: "Rostov-on-Don", cap: 45145, img: "Foto/icon_stadion.png"},
+            {name: "Kazan Arena", city: "Kazan", cap: 45105, img: "Foto/icon_stadion.png"},
+            {name: "Samara Arena", city: "Samara", cap: 44918, img: "Foto/icon_stadion.png"},
+            {name: "Mordovia Arnoa", city: "Saransk", cap: 44442, img: "Foto/icon_stadion.png"},
+            {name: "Otkritie Arena", city: "Moskou", cap: 44000, img: "Foto/icon_stadion.png"},
+            {name: "Tsentralnyj Stadion", city: "Yekaterinburg", cap: 35696, img: "Foto/icon_stadion.png"},
+            {name: "Stadion Kaliningrad", city: "Kaliningrad", cap: 35212, img: "Foto/icon_stadion.png"}
+        ]
+        var stadionLatLng = [
+            {
+                position: new google.maps.LatLng(55.7158863, 37.5070319), type: 'info'
+            },{
+                position: new google.maps.LatLng(59.9727307, 30.2192158), type: 'info'
+            },{
+                position: new google.maps.LatLng(43.4020701,39.9537504), type: 'info'
+            },{
+                position: new google.maps.LatLng(48.7345449,44.5463401), type: 'info'
+            },{
+                position: new google.maps.LatLng(56.3372902,43.961062), type: 'info'
+            },{
+                position: new google.maps.LatLng(47.2095847,39.7362356), type: 'info'
+            },{
+                position: new google.maps.LatLng(55.820986,49.1587774), type: 'info'
+            },{
+                position: new google.maps.LatLng(53.2781358,50.235292), type: 'info'
+            },{
+                position: new google.maps.LatLng(54.1817979,45.2016627), type: 'info'
+            },{
+                position: new google.maps.LatLng(55.8177683,37.438174), type: 'info'
+            },{
+                position: new google.maps.LatLng(56.8324789,60.5713934), type: 'info'
+            },{
+                position: new google.maps.LatLng(54.6980452,20.530098), type: 'info'
+            }];
+            stadionLatLng.forEach(function (feature) {
+                var marker = new google.maps.Marker({
+                    position: feature.position,
+                    icon: icons[feature.type].icon,
+                    map: map
+                });
+            });
+        }
+    </script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd2XVhxpSqs98XAq_h7v0j358Dvh1Lbjw&callback=initMap">
+</script>
+</body>
+</html>
