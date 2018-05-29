@@ -1,0 +1,15 @@
+button#home{
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    vertical-align: center;
+    horiz-align: center;
+    margin-left: 42.5%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: white;
+    width: 250px;
+    height: 70px;
+    border-style: none;
+    position: absolute;
+}
