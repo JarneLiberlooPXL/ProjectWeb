@@ -27,7 +27,7 @@
 
 
 <script>
-    let landenArray = JSON.parse(localStorage.getItem('landen'));
+    let landenArray = JSON.parse(localStorage.getItem('landen')) || [];
     console.log(landenArray);
     updateLanden();
     function Toevoegen() {
